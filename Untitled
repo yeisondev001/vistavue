@@ -1,0 +1,34 @@
+# Feature: Login (sistema_login)
+
+## Descripción
+
+Autenticación inicial del usuario mediante:
+
+- app
+- usuario (correo)
+- clave
+
+El sistema:
+
+- Valida que la app exista
+- Verifica credenciales
+- Selecciona una empresa disponible (última usada o primera)
+- Genera un payload de sesión con permisos
+- Devuelve un token Bearer (JWT)
+
+---
+
+## Endpoint
+
+POST /sistema_login
+
+---
+
+## Request (Body JSON)
+
+```json
+{
+  "app": "ecf",
+  "usuario": "correo@ejemplo.com",
+  "clave": "contraseña"
+}
