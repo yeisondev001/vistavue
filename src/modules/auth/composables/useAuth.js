@@ -1,6 +1,6 @@
 import { clearAuthSession, setAuthSession } from '../../../app/store/auth.store'
 import { clearToken, setToken } from '../../../shared/services/token.service'
-import { sistemaLogin } from '../services/auth.api'
+import { sistemaLogin, sistemaSession } from '../services/auth.api'  // Agrega sistemaSession al import
 
 function extractToken(rawToken) {
   if (!rawToken) return null
@@ -33,10 +33,17 @@ export function useAuth() {
     return response
   }
 
+  const refreshSession = async () => {
+    const response = await sistemaSession()
+    const session = normalizeSession(response.data)
+    setAuthSession(session)  // Actualiza estado sin token nuevo
+    return response
+  }
+
   const logout = () => {
     clearToken()
     clearAuthSession()
   }
 
-  return { login, logout }
+  return { login, logout, refreshSession }  // Agrega refreshSession al return
 }

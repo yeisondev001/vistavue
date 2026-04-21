@@ -7,3 +7,11 @@ export function sistemaLogin({ app, usuario, clave }) {
     body: { app, usuario, clave },
   })
 }
+
+export function sistemaSession() {
+  return apiFetch('/sistema_session', {
+    method: 'POST',
+    auth: true,  // Envía Bearer automáticamente
+    body: {},    // Body vacío
+  })
+}
