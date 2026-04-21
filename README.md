@@ -1,5 +1,20 @@
-# Vue 3 + Vite
+# Sistema de Login con Vue 3
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este proyecto es una aplicación desarrollada con Vue 3 y Vite que permite autenticación de usuarios y conexión con una API.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 🚀 Funcionalidades
+- Inicio de sesión de usuarios
+- Validación de credenciales
+- Consumo de API para autenticación
+- Manejo de sesiones
+
+## 🛠️ Tecnologías usadas
+- Vue 3
+- Vite
+- JavaScript
+- Fetch API / Axios
+
+## 📦 Instalación
+```bash
+npm install
+npm run dev
